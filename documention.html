@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RSV – AI-Powered Restaurant Reservation Bot</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+        }
+        h1, h2, h3 {
+            color: #222;
+        }
+        h1 {
+            margin-bottom: 5px;
+        }
+        .subtitle {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        ul {
+            margin-left: 20px;
+        }
+        code {
+            background: #eee;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .footer {
+            margin-top: 40px;
+            font-size: 14px;
+            color: #777;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <h1>RSV – AI-Powered Restaurant Reservation Bot</h1>
+    <p class="subtitle">
+        A production-ready restaurant reservation chatbot with AI-powered conversation,
+        smart table management, and a responsive web UI.
+    </p>
+
+    <div class="section">
+        <h2>Overview</h2>
+        <p>
+            RSV is a full-stack AI chatbot that handles restaurant reservations like a human assistant.
+            It understands natural language, manages table availability, prevents double bookings,
+            and provides a smooth booking experience.
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>Features</h2>
+
+        <h3>Smart Chatbot</h3>
+        <ul>
+            <li>ML-based intent classification (TF-IDF + Naive Bayes)</li>
+            <li>8 intents: greeting, menu, booking, availability, cancel, modify, FAQ, feedback</li>
+            <li>Confidence-based responses with fallback handling</li>
+        </ul>
+
+        <h3>Entity Extraction</h3>
+        <ul>
+            <li>Date parsing: today, tomorrow, weekdays, explicit dates</li>
+            <li>Time parsing: 12-hour and 24-hour formats</li>
+            <li>Guest count extraction</li>
+            <li>Customer name detection</li>
+        </ul>
+
+        <h3>Availability Engine</h3>
+        <ul>
+            <li>Real-time table availability</li>
+            <li>Double booking prevention</li>
+            <li>Time-slot-based reservations</li>
+            <li>Alternative slot suggestions</li>
+            <li>Table capacities: 2, 4, 6, 8</li>
+        </ul>
+
+        <h3>Reservation System</h3>
+        <ul>
+            <li>Create, modify, cancel reservations</li>
+            <li>Unique confirmation IDs</li>
+            <li>Pre-order dishes</li>
+            <li>Special requests handling</li>
+        </ul>
+
+        <h3>Menu System</h3>
+        <ul>
+            <li>56 items across 5 categories</li>
+            <li>Vegan / vegetarian flags</li>
+            <li>Popularity ratings</li>
+            <li>Chef’s specials</li>
+            <li>Price filtering and search</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>AI / ML</h2>
+        <ul>
+            <li>Intent classification using scikit-learn</li>
+            <li>Sentiment analysis using TextBlob</li>
+            <li>Popularity-based recommendations</li>
+            <li>Coupon code support</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>UI</h2>
+        <ul>
+            <li>Mobile-first responsive design</li>
+            <li>Dark / light mode</li>
+            <li>Real-time chat with typing indicators</li>
+            <li>Menu cards with images</li>
+            <li>Reservation modal and testimonials</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Tech Stack</h2>
+        <ul>
+            <li><strong>Backend:</strong> Python, FastAPI</li>
+            <li><strong>Frontend:</strong> HTML, CSS, JavaScript</li>
+            <li><strong>AI / ML:</strong> scikit-learn, TextBlob, NLTK</li>
+            <li><strong>Database:</strong> SQLite (cloud-ready)</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>API Endpoints</h2>
+        <ul>
+            <li>POST /chat</li>
+            <li>GET /menu</li>
+            <li>POST /menu/search</li>
+            <li>GET /menu/chef-specials</li>
+            <li>GET /menu/popular</li>
+            <li>POST /availability</li>
+            <li>POST /reservation</li>
+            <li>PUT /reservation/{id}</li>
+            <li>DELETE /reservation/{id}</li>
+            <li>POST /feedback</li>
+            <li>GET /admin/stats</li>
+            <li>GET /health</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Installation</h2>
+        <p>
+            <code>cd rsv-restaurant-bot</code><br>
+            <code>pip install -r requirements.txt</code><br>
+            <code>python -m textblob.download_corpora</code><br>
+            <code>python database/seed.py</code><br>
+            <code>python -c "from chatbot.intent_model import IntentModel; m = IntentModel(); m.train()"</code><br>
+            <code>python app.py</code>
+        </p>
+        <p>Application runs at: <strong>http://localhost:8000</strong></p>
+    </div>
+
+    <div class="section">
+        <h2>Testing</h2>
+        <p><code>pytest tests/test_availability.py -v</code></p>
+    </div>
+
+    <div class="section">
+        <h2>License</h2>
+        <p>Free to use for educational purposes.</p>
+    </div>
+
+    <div class="section">
+        <h2>Future Enhancements</h2>
+        <ul>
+            <li>Payments</li>
+            <li>Email / SMS notifications</li>
+            <li>Multi-language support</li>
+            <li>Analytics dashboard</li>
+            <li>Waitlist management</li>
+        </ul>
+    </div>
+
+    <div class="footer">
+        © RSV Project – AI-Powered Restaurant Reservation Bot
+    </div>
+
+</div>
+
+</body>
+</html>
